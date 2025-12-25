@@ -1,0 +1,6 @@
+res://scenes/shotgun_2.tscn
+res://scenes/shot.tscn
+res://scripts/shot.gd
+res://scenes/player.tscn
+res://scripts/shotgun.gd
+res://scripts/player.gd

@@ -1,0 +1,15 @@
+Node3D
+CollisionShape3D
+RigidBody3D
+MeshInstance3D
+Node2D
+OmniLight3D
+Marker3D
+TextEdit
+StaticBody3D
+MeshInstance2D
+CharacterBody3D
+SpotLight3D
+Area3D
+WorldEnvironment
+Camera3D

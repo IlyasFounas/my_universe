@@ -1,0 +1,21 @@
+[gd_scene load_steps=3 format=3 uid="uid://dukuul1riothq"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_f70r1"]
+
+[sub_resource type="QuadMesh" id="QuadMesh_7h2a2"]
+
+[node name="wall" type="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.51487, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(0.108034, -1.77533e-09, -9.99942, -9.99913, -0.00376988, -0.108031, -0.0753932, 0.499986, -0.000814589, 0, 4.49317, 0)
+shape = SubResource("BoxShape3D_f70r1")
+
+[node name="Box" type="MeshInstance3D" parent="."]
+transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 0, 4.5357, 0.000620395)
+mesh = SubResource("QuadMesh_7h2a2")
+
+[node name="Box2" type="MeshInstance3D" parent="."]
+transform = Transform3D(-10, 0, -8.74228e-07, 0, 10, 0, 8.74228e-07, 0, -10, 0, 4.54701, 0.00682434)
+mesh = SubResource("QuadMesh_7h2a2")
+skeleton = NodePath("../Box")

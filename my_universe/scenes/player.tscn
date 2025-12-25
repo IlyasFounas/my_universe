@@ -1,0 +1,63 @@
+[gd_scene load_steps=9 format=3 uid="uid://bym7uyhhw8jd1"]
+
+[ext_resource type="CapsuleMesh" uid="uid://biurfmgqy1eks" path="res://mesh/player_1st.tres" id="1_8ti48"]
+[ext_resource type="Script" path="res://scripts/player.gd" id="1_320ji"]
+[ext_resource type="BoxMesh" uid="uid://bixeubd7tbf20" path="res://mesh/box.tres" id="3_gbtyq"]
+[ext_resource type="PackedScene" uid="uid://dsdwibv0lyp81" path="res://mesh/woodsmans_axe.glb" id="4_3cfqv"]
+[ext_resource type="Texture2D" uid="uid://c6ec04vfmb5sr" path="res://img/shotgun-removebg-preview.png" id="5_5s6uw"]
+[ext_resource type="Texture2D" uid="uid://cn13k7ch48608" path="res://img/image-removebg-preview.png" id="6_ueqtx"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_oyv4t"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_vrdkc"]
+
+[node name="player" type="CharacterBody3D"]
+script = ExtResource("1_320ji")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -5.96046e-08, -1.49012e-08)
+shape = SubResource("CapsuleShape3D_oyv4t")
+
+[node name="Area3D" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(5, 0, 0, 0, 0, 0, 0, 0, 5, 0, 0, 0)
+shape = SubResource("SphereShape3D_vrdkc")
+
+[node name="Player1St" type="MeshInstance3D" parent="."]
+mesh = ExtResource("1_8ti48")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.966886, 0.25521, 0, -0.25521, 0.966886, 0, 0.92063, 0.10074)
+
+[node name="Arm1st" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.0105591, 0, 0.199989, 0, 0.2, 0, -0.999944, 0, 0.00211182, 0.324642, 0.0821835, -0.716)
+visible = false
+mesh = ExtResource("3_gbtyq")
+
+[node name="OmniLight3D" type="SpotLight3D" parent="Arm1st"]
+transform = Transform3D(-4.37114e-08, 0.174497, -4.99695, 0, 4.99695, 0.174497, 1, 7.62753e-09, -2.18424e-07, 0.595051, 0, -0.0314177)
+visible = false
+spot_range = 21.9
+spot_angle = 48.8697
+
+[node name="Hand" type="Node3D" parent="."]
+transform = Transform3D(-1, -1.51808e-08, -8.60946e-08, 0, 0.984808, -0.173648, 8.74228e-08, -0.173648, -0.984808, 0.170179, 0.613803, -0.218844)
+
+[node name="woodsmans_axe" parent="." instance=ExtResource("4_3cfqv")]
+transform = Transform3D(-0.0827764, 0.686304, 0.110156, 0.0750048, 0.119106, -0.685703, -0.69103, -0.0692825, -0.0876218, 0.200719, 0.399684, -0.523678)
+
+[node name="Node2D" type="Node2D" parent="."]
+
+[node name="Image-removebg-preview" type="Sprite2D" parent="Node2D"]
+position = Vector2(-37.125, 3.25006)
+scale = Vector2(0.207534, 0.150162)
+texture = ExtResource("6_ueqtx")
+
+[node name="Shotgun-removebg-preview" type="Sprite2D" parent="Node2D"]
+visible = false
+position = Vector2(63.8751, 8.25012)
+scale = Vector2(0.129905, 0.175926)
+texture = ExtResource("5_5s6uw")
+
+[connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]

@@ -1,0 +1,25 @@
+[gd_scene load_steps=3 format=3 uid="uid://cml7853ifa3ql"]
+
+[ext_resource type="Script" path="res://scripts/shot.gd" id="1_41qow"]
+[ext_resource type="PackedScene" uid="uid://bwtkk4y74j4a6" path="res://scenes/amo.tscn" id="1_o2r1g"]
+
+[node name="shot" type="Node3D"]
+script = ExtResource("1_41qow")
+
+[node name="gunfire2" parent="." instance=ExtResource("1_o2r1g")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0132435, 0.0157007, -0.0059591)
+
+[node name="gunfire3" parent="." instance=ExtResource("1_o2r1g")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0316378, 0.015228, -0.00965312)
+
+[node name="gunfire4" parent="." instance=ExtResource("1_o2r1g")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00765884, 0, -0.0062771)
+
+[node name="gunfire5" parent="." instance=ExtResource("1_o2r1g")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0118696, 0, -0.00307678)
+
+[node name="gunfire6" parent="." instance=ExtResource("1_o2r1g")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00765884, 0.0181156, -0.00321795)
+
+[node name="gunfire7" parent="." instance=ExtResource("1_o2r1g")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0329056, 0, -0.00743026)

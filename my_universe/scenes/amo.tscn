@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://bwtkk4y74j4a6"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_nb1ko"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_aryxw"]
+
+[node name="gunfire" type="RigidBody3D"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.01, 0, 0, 0, 0.01, 0, 0, 0, 0.01, 0, 0, 0)
+mesh = SubResource("SphereMesh_nb1ko")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(0.01, 0, 0, 0, 0.01, 0, 0, 0, 0.01, 0, 0, 0)
+shape = SubResource("SphereShape3D_aryxw")

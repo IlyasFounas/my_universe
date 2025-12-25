@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://ba7lcugkmo23v"]
+
+[ext_resource type="BoxMesh" uid="uid://bixeubd7tbf20" path="res://mesh/box.tres" id="1_gnjgm"]
+[ext_resource type="PackedScene" uid="uid://cpjr2imt4v63m" path="res://mesh/izh-27.glb" id="2_37vfm"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_do82m"]
+
+[node name="shotgun" type="Node3D"]
+
+[node name="Box" type="MeshInstance3D" parent="."]
+mesh = ExtResource("1_gnjgm")
+
+[node name="izh-27" parent="." instance=ExtResource("2_37vfm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0923827, 1.17568, -0.237716)
+
+[node name="shotgun" type="RigidBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="shotgun"]
+shape = SubResource("BoxShape3D_do82m")

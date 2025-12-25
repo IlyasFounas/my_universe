@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://da8ym16v8jifn"]
+
+[ext_resource type="CapsuleMesh" uid="uid://biurfmgqy1eks" path="res://mesh/player_1st.tres" id="1_x0cx1"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_8ycxv"]
+
+[node name="enemy" type="CharacterBody3D"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("CapsuleShape3D_8ycxv")
+
+[node name="Player1St" type="MeshInstance3D" parent="."]
+mesh = ExtResource("1_x0cx1")
