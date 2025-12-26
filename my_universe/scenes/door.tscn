@@ -1,20 +1,27 @@
-[gd_scene load_steps=4 format=3 uid="uid://caol08ojad40o"]
+[gd_scene load_steps=5 format=3 uid="uid://caol08ojad40o"]
 
 [ext_resource type="Script" path="res://scripts/door.gd" id="1_kk2mh"]
+[ext_resource type="PackedScene" uid="uid://lfe24kyxnai8" path="res://scenes/door2.tscn" id="2_qpp2a"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_p7wit"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_1jsdo"]
+size = Vector3(0.353619, 0.19324, 1)
 
 [node name="door" type="Node3D"]
 script = ExtResource("1_kk2mh")
 
 [node name="Box" type="MeshInstance3D" parent="."]
 transform = Transform3D(3, 0, 0, 0, 10, 0, 0, 0, 0.5, 1.54, 0, 0)
+visible = false
 mesh = SubResource("BoxMesh_p7wit")
 
 [node name="door" type="RigidBody3D" parent="."]
 transform = Transform3D(3, 0, 0, 0, 10, 0, 0, 0, 0.5, 1.54, 0, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="door"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.318357, 0.107265, 0)
 shape = SubResource("BoxShape3D_1jsdo")
+
+[node name="door2" parent="." instance=ExtResource("2_qpp2a")]
+transform = Transform3D(0.009, 0, 0, 0, 0.009, 0, 0, 0, 0.009, 0.564619, 1.91413, 0)

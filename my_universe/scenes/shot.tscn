@@ -6,20 +6,35 @@
 [node name="shot" type="Node3D"]
 script = ExtResource("1_41qow")
 
-[node name="gunfire2" parent="." instance=ExtResource("1_o2r1g")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0132435, 0.0157007, -0.0059591)
+[node name="gunfire9" parent="." instance=ExtResource("1_o2r1g")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0329056, 0.0148577, -0.00743026)
 
-[node name="gunfire3" parent="." instance=ExtResource("1_o2r1g")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0316378, 0.015228, -0.00965312)
+[node name="gunfire10" parent="gunfire9" instance=ExtResource("1_o2r1g")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0542323, -0.00164692, 0)
 
-[node name="gunfire4" parent="." instance=ExtResource("1_o2r1g")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00765884, 0, -0.0062771)
+[node name="gunfire8" parent="gunfire9" instance=ExtResource("1_o2r1g")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0276168, 0.000187568, 0)
 
-[node name="gunfire5" parent="." instance=ExtResource("1_o2r1g")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0118696, 0, -0.00307678)
+[node name="gunfire10" parent="." instance=ExtResource("1_o2r1g")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0329056, -0.0277863, -0.00743026)
 
-[node name="gunfire6" parent="." instance=ExtResource("1_o2r1g")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00765884, 0.0181156, -0.00321795)
+[node name="gunfire10" parent="gunfire10" instance=ExtResource("1_o2r1g")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0542323, -0.00164692, 0)
 
-[node name="gunfire7" parent="." instance=ExtResource("1_o2r1g")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0329056, 0, -0.00743026)
+[node name="gunfire8" parent="gunfire10" instance=ExtResource("1_o2r1g")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0276168, 0.000187568, 0)
+
+[node name="gunfire11" parent="." instance=ExtResource("1_o2r1g")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0329056, -0.00614429, -0.00743026)
+
+[node name="gunfire10" parent="gunfire11" instance=ExtResource("1_o2r1g")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0542323, -0.00164692, 0)
+
+[node name="gunfire8" parent="gunfire11" instance=ExtResource("1_o2r1g")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0276168, 0.000187568, 0)
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 2.0
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

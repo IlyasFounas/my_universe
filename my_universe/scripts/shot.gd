@@ -1,8 +1,11 @@
 extends Node3D
 
+var direction := Vector3.ZERO
+@export var speed := 15.0
 
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	translate(Vector3(1,0,0) * 0.01)
+func _process(delta):
+	global_translate(direction * speed * delta)
 
 
+func _on_timer_timeout():
+	queue_free()

@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://cl13i56xbff2o"]
+
+[ext_resource type="PackedScene" uid="uid://dy30xf0clsebt" path="res://mesh/first_aid.glb" id="1_6qtg2"]
+
+[node name="first_aid" instance=ExtResource("1_6qtg2")]
+
+[node name="Sketchfab_model" parent="." index="0"]
+transform = Transform3D(1.60378, 0, 0, 0, 3.5611e-16, 1.60378, 0, -1.60378, 3.5611e-16, 0, 0, 0)
+
+[node name="Object_2" parent="Sketchfab_model/b4819774886f4dbf9051b046c29a2078_obj_cleaner_materialmerger_gles" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)

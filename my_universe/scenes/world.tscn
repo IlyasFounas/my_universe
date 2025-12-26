@@ -1,18 +1,14 @@
-[gd_scene load_steps=5 format=3 uid="uid://cnyhedo15fps6"]
+[gd_scene load_steps=6 format=3 uid="uid://cnyhedo15fps6"]
 
 [ext_resource type="PackedScene" uid="uid://bym7uyhhw8jd1" path="res://scenes/player.tscn" id="1_3nhyp"]
 [ext_resource type="PackedScene" uid="uid://c5ab6vdr0wgk" path="res://scenes/mansion2.tscn" id="2_7jew4"]
 [ext_resource type="Texture2D" uid="uid://c6ec04vfmb5sr" path="res://img/shotgun-removebg-preview.png" id="3_bt80j"]
+[ext_resource type="PackedScene" uid="uid://b5lxteqjgr25u" path="res://scenes/joe.tscn" id="4_pkesl"]
 
 [sub_resource type="Environment" id="Environment_jhht4"]
 background_mode = 2
 
-[node name="Node3D" type="Node3D"]
-
-[node name="OmniLight3D" type="OmniLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 0.965926, -0.258819, 0, 0.258819, 0.965926, 0, 35.5444, 24.1106)
-light_energy = 4.429
-omni_range = 87.6321
+[node name="Word" type="Node3D"]
 
 [node name="player" parent="." instance=ExtResource("1_3nhyp")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.4678, 2, -4.68157)
@@ -23,11 +19,17 @@ environment = SubResource("Environment_jhht4")
 [node name="mansion2" parent="." instance=ExtResource("2_7jew4")]
 
 [node name="OmniLight3D2" type="OmniLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 0.866026, -0.5, 0, 0.5, 0.866026, 0, 35.7334, -42.1968)
-light_energy = 4.429
+transform = Transform3D(1, 0, 0, 0, 0.866026, -0.5, 0, 0.5, 0.866026, 0.054431, 35.7334, -42.178)
+light_energy = 0.35
 omni_range = 87.6321
 
 [node name="shotgun_img" type="Sprite2D" parent="."]
 position = Vector2(124, 47)
 scale = Vector2(0.289596, 0.321919)
 texture = ExtResource("3_bt80j")
+
+[node name="joe__realistic_human_3d_model" parent="." instance=ExtResource("4_pkesl")]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, -22.4728, -0.277876, -19.6411)
+
+[node name="joe__realistic_human_3d_model2" parent="." instance=ExtResource("4_pkesl")]
+transform = Transform3D(-1.48853, 0, -0.185168, 0, 1.5, 0, 0.185168, 0, -1.48853, -26.4752, -0.277876, -19.6411)

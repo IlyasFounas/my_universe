@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://co5gfxx803y16"]
+
+[ext_resource type="PackedScene" uid="uid://gpdxu48e81ap" path="res://mesh/character.glb" id="1_5841d"]
+
+[node name="character" instance=ExtResource("1_5841d")]

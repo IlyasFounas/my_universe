@@ -1,21 +1,39 @@
-[gd_scene load_steps=9 format=3 uid="uid://bym7uyhhw8jd1"]
+[gd_scene load_steps=16 format=3 uid="uid://bym7uyhhw8jd1"]
 
 [ext_resource type="CapsuleMesh" uid="uid://biurfmgqy1eks" path="res://mesh/player_1st.tres" id="1_8ti48"]
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_320ji"]
-[ext_resource type="BoxMesh" uid="uid://bixeubd7tbf20" path="res://mesh/box.tres" id="3_gbtyq"]
+[ext_resource type="PackedScene" uid="uid://b5lxteqjgr25u" path="res://scenes/joe.tscn" id="3_3r4ge"]
 [ext_resource type="PackedScene" uid="uid://dsdwibv0lyp81" path="res://mesh/woodsmans_axe.glb" id="4_3cfqv"]
 [ext_resource type="Texture2D" uid="uid://c6ec04vfmb5sr" path="res://img/shotgun-removebg-preview.png" id="5_5s6uw"]
 [ext_resource type="Texture2D" uid="uid://cn13k7ch48608" path="res://img/image-removebg-preview.png" id="6_ueqtx"]
+[ext_resource type="Texture2D" uid="uid://cxl5pooexv1tj" path="res://img/joe-removebg-preview.png" id="7_4nwcd"]
+[ext_resource type="Texture2D" uid="uid://bgrocymgenofn" path="res://img/1staid.png" id="8_nm883"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_oyv4t"]
+radius = 0.354327
+height = 1.73819
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_vrdkc"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_rmtn4"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ko03u"]
+albedo_color = Color(0.835294, 0, 0.0980392, 1)
+albedo_texture = SubResource("CanvasTexture_rmtn4")
+
+[sub_resource type="SphereMesh" id="SphereMesh_noahw"]
+material = SubResource("StandardMaterial3D_ko03u")
+
+[sub_resource type="BoxMesh" id="BoxMesh_ix8m3"]
+
+[sub_resource type="Theme" id="Theme_36m7b"]
+default_font_size = 25
 
 [node name="player" type="CharacterBody3D"]
 script = ExtResource("1_320ji")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -5.96046e-08, -1.49012e-08)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.799813, -1.49012e-08)
 shape = SubResource("CapsuleShape3D_oyv4t")
 
 [node name="Area3D" type="Area3D" parent="."]
@@ -25,27 +43,20 @@ transform = Transform3D(5, 0, 0, 0, 0, 0, 0, 0, 5, 0, 0, 0)
 shape = SubResource("SphereShape3D_vrdkc")
 
 [node name="Player1St" type="MeshInstance3D" parent="."]
+visible = false
 mesh = ExtResource("1_8ti48")
 
 [node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 0.966886, 0.25521, 0, -0.25521, 0.966886, 0, 0.92063, 0.10074)
+transform = Transform3D(1, 0, 0, 0, 0.953449, 0.301555, 0, -0.301555, 0.953449, 0, 1.58102, -0.127998)
 
-[node name="Arm1st" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.0105591, 0, 0.199989, 0, 0.2, 0, -0.999944, 0, 0.00211182, 0.324642, 0.0821835, -0.716)
-visible = false
-mesh = ExtResource("3_gbtyq")
-
-[node name="OmniLight3D" type="SpotLight3D" parent="Arm1st"]
-transform = Transform3D(-4.37114e-08, 0.174497, -4.99695, 0, 4.99695, 0.174497, 1, 7.62753e-09, -2.18424e-07, 0.595051, 0, -0.0314177)
-visible = false
-spot_range = 21.9
-spot_angle = 48.8697
+[node name="joe__realistic_human_3d_model" parent="." instance=ExtResource("3_3r4ge")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 0)
 
 [node name="Hand" type="Node3D" parent="."]
-transform = Transform3D(-1, -1.51808e-08, -8.60946e-08, 0, 0.984808, -0.173648, 8.74228e-08, -0.173648, -0.984808, 0.170179, 0.613803, -0.218844)
+transform = Transform3D(-0.989323, -0.0253071, -0.143524, 1.3027e-15, 0.984808, -0.173648, 0.145738, -0.171794, -0.974293, 0.170179, 1.31996, -0.218844)
 
 [node name="woodsmans_axe" parent="." instance=ExtResource("4_3cfqv")]
-transform = Transform3D(-0.0827764, 0.686304, 0.110156, 0.0750048, 0.119106, -0.685703, -0.69103, -0.0692825, -0.0876218, 0.200719, 0.399684, -0.523678)
+transform = Transform3D(-0.136414, 0.4804, -0.490517, 0.0803786, -0.485491, -0.497833, -0.681858, -0.15334, 0.0394489, 0.162327, 1.10552, -0.513833)
 
 [node name="Node2D" type="Node2D" parent="."]
 
@@ -59,5 +70,59 @@ visible = false
 position = Vector2(63.8751, 8.25012)
 scale = Vector2(0.129905, 0.175926)
 texture = ExtResource("5_5s6uw")
+
+[node name="Crossair" type="Node2D" parent="."]
+
+[node name="axe" type="MeshInstance2D" parent="Crossair"]
+scale = Vector2(10, 10)
+mesh = SubResource("SphereMesh_noahw")
+
+[node name="shotgun" type="MeshInstance2D" parent="Crossair"]
+visible = false
+position = Vector2(0, -37)
+scale = Vector2(3, 25)
+mesh = SubResource("BoxMesh_ix8m3")
+
+[node name="shotgun2" type="MeshInstance2D" parent="Crossair/shotgun"]
+position = Vector2(0, 2.88)
+mesh = SubResource("BoxMesh_ix8m3")
+
+[node name="shotgun3" type="MeshInstance2D" parent="Crossair/shotgun"]
+position = Vector2(17, 1.48)
+scale = Vector2(9, 0.12)
+mesh = SubResource("BoxMesh_ix8m3")
+
+[node name="shotgun4" type="MeshInstance2D" parent="Crossair/shotgun"]
+position = Vector2(-17, 1.48)
+scale = Vector2(9, 0.12)
+mesh = SubResource("BoxMesh_ix8m3")
+
+[node name="player_infos" type="Node2D" parent="."]
+
+[node name="p_img" type="Sprite2D" parent="player_infos"]
+position = Vector2(0, 1.90735e-06)
+scale = Vector2(0.224972, 0.210581)
+texture = ExtResource("7_4nwcd")
+
+[node name="name" type="RichTextLabel" parent="player_infos"]
+offset_left = -16.0
+offset_top = 44.0
+offset_right = 21.0
+offset_bottom = 80.0
+theme = SubResource("Theme_36m7b")
+text = "Joe"
+
+[node name="health" type="RichTextLabel" parent="player_infos"]
+offset_left = 66.0
+offset_top = 46.0
+offset_right = 114.0
+offset_bottom = 82.0
+theme = SubResource("Theme_36m7b")
+text = "100"
+
+[node name="1Staid" type="Sprite2D" parent="player_infos"]
+position = Vector2(90, 4)
+scale = Vector2(0.202945, 0.218182)
+texture = ExtResource("8_nm883")
 
 [connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]

@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://lfe24kyxnai8"]
+
+[ext_resource type="PackedScene" uid="uid://bb4keuxhpr5j8" path="res://mesh/door.glb" id="1_ml0g8"]
+
+[node name="door" instance=ExtResource("1_ml0g8")]

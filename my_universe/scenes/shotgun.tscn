@@ -11,7 +11,7 @@
 mesh = ExtResource("1_gnjgm")
 
 [node name="izh-27" parent="." instance=ExtResource("2_37vfm")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0923827, 1.17568, -0.237716)
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0.0923827, 1.17568, -0.476757)
 
 [node name="shotgun" type="RigidBody3D" parent="."]
 

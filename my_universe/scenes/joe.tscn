@@ -1,0 +1,93 @@
+[gd_scene load_steps=6 format=3 uid="uid://b5lxteqjgr25u"]
+
+[ext_resource type="PackedScene" uid="uid://dptr01egaryat" path="res://mesh/joe__realistic_human_3d_model.glb" id="1_p8d1o"]
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_pfu6l"]
+
+[sub_resource type="Animation" id="Animation_c7ngi"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Skeleton3D/PhysicalBone3D/CollisionShape3D:shape")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [SubResource("ConvexPolygonShape3D_pfu6l")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Skeleton3D/PhysicalBone3D2:body_offset")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0400846, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_v8k51"]
+resource_name = "idle"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Skeleton3D/PhysicalBone3D/CollisionShape3D:shape")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.3),
+"transitions": PackedFloat32Array(0.0769467),
+"update": 1,
+"values": [SubResource("ConvexPolygonShape3D_pfu6l")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Skeleton3D/PhysicalBone3D2:body_offset")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.1),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0400846, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_xca74"]
+_data = {
+"RESET": SubResource("Animation_c7ngi"),
+"idle": SubResource("Animation_v8k51")
+}
+
+[node name="joe__realistic_human_3d_model" instance=ExtResource("1_p8d1o")]
+
+[node name="Arms" parent="Sketchfab_model/Joe_fbx/RootNode/Joe" index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0713752, 1.67618, 2.25745)
+
+[node name="basic" type="AnimationPlayer" parent="." index="1"]
+libraries = {
+"": SubResource("AnimationLibrary_xca74")
+}
+
+[node name="Skeleton3D" type="Skeleton3D" parent="." index="2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.452952, 0.945205, 0.0883489)
+
+[node name="PhysicalBone3D" type="PhysicalBone3D" parent="Skeleton3D" index="0"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Skeleton3D/PhysicalBone3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.00237072, 0)
+shape = SubResource("ConvexPolygonShape3D_pfu6l")
+
+[node name="PhysicalBone3D2" type="PhysicalBone3D" parent="Skeleton3D" index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0400846, 0)
+joint_offset = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0400846, 0)
+body_offset = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0400846, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Skeleton3D/PhysicalBone3D2" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.00237072, 0)
+shape = SubResource("ConvexPolygonShape3D_pfu6l")

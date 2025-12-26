@@ -5,6 +5,7 @@
 [sub_resource type="SphereShape3D" id="SphereShape3D_aryxw"]
 
 [node name="gunfire" type="RigidBody3D"]
+gravity_scale = 0.0
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 transform = Transform3D(0.01, 0, 0, 0, 0.01, 0, 0, 0, 0.01, 0, 0, 0)

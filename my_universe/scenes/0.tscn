@@ -1,0 +1,21 @@
+[gd_scene load_steps=3 format=3 uid="uid://xqdq2w7dcxt1"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_e1hk5"]
+albedo_color = Color(0.796078, 0, 0.184314, 1)
+
+[sub_resource type="TorusMesh" id="TorusMesh_851dh"]
+material = SubResource("StandardMaterial3D_e1hk5")
+inner_radius = 1.5
+outer_radius = 0.9
+
+[node name="0" type="Node3D"]
+
+[node name="BOX_0" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.007, 0, 0, 0, 0.005, 0, 0, 0, 0.01, 0.0012174, 0.000708848, -0.000889748)
+mesh = SubResource("TorusMesh_851dh")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="BOX_0"]
+transform = Transform3D(142.857, 0, 0, 0, 200, 0, 0, 0, 100, -0.173914, 3.173, 0.0889749)
+light_color = Color(0.796078, 0, 0.184314, 1)
+omni_range = 0.105441
+omni_attenuation = 0.153893

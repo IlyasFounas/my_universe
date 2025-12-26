@@ -1,0 +1,30 @@
+[gd_scene load_steps=3 format=3 uid="uid://cbyqth8s4xbhf"]
+
+[ext_resource type="PackedScene" uid="uid://c7mrrug102dtb" path="res://mesh/wall_lamp_-_2048px2.glb" id="1_3fdq1"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_336p1"]
+size = Vector3(0.234723, 0.237516, 0.264967)
+
+[node name="wall_light" type="StaticBody3D"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.00551221, 0.135054)
+shape = SubResource("BoxShape3D_336p1")
+
+[node name="wall_lamp_-_2048px2" parent="." instance=ExtResource("1_3fdq1")]
+
+[node name="SpotLight3D" type="SpotLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0.133857, 0.203873)
+spot_angle = 29.4496
+
+[node name="OmniLight3D" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0.00440794, -0.00721693, 0.208537)
+omni_range = 0.164564
+
+[node name="OmniLight3D2" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0.107359, -0.00721693, 0.208537)
+omni_range = 0.164564
+
+[node name="OmniLight3D3" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -0.11613, -0.00293194, 0.208537)
+omni_range = 0.148206

@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=3 uid="uid://dpgx1bu7sg0mm"]
+
+[ext_resource type="PackedScene" uid="uid://rjdq30yk7b43" path="res://launcher/mesh/abandoned_mansion.glb" id="1_kraon"]
+[ext_resource type="PackedScene" uid="uid://b5lxteqjgr25u" path="res://scenes/joe.tscn" id="2_5yxvg"]
+
+[sub_resource type="Environment" id="Environment_jhq0v"]
+background_mode = 2
+
+[node name="main" type="Node3D"]
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.000587106, 1.12593, 6.87452)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_jhq0v")
+
+[node name="abandoned_mansion" parent="." instance=ExtResource("1_kraon")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0828587, 0, -0.145498)
+
+[node name="joe__realistic_human_3d_model" parent="." instance=ExtResource("2_5yxvg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.000587106, 0.0184004, 4.28544)
+
+[node name="OmniLight3D" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.187658, 0, 8.00246)
+omni_range = 9.60699

@@ -1,12 +1,15 @@
-[gd_scene load_steps=7 format=3 uid="uid://c5ab6vdr0wgk"]
+[gd_scene load_steps=9 format=3 uid="uid://c5ab6vdr0wgk"]
 
 [ext_resource type="PlaneMesh" uid="uid://c2bqq66xkt7nq" path="res://mesh/new_plane_mesh.tres" id="1_g6y00"]
 [ext_resource type="PackedScene" uid="uid://dukuul1riothq" path="res://scenes/wall.tscn" id="2_m8r4y"]
 [ext_resource type="PackedScene" uid="uid://caol08ojad40o" path="res://scenes/door.tscn" id="3_d730n"]
 [ext_resource type="PackedScene" uid="uid://da8ym16v8jifn" path="res://scenes/enemy.tscn" id="4_vqra6"]
 [ext_resource type="PackedScene" uid="uid://ba7lcugkmo23v" path="res://scenes/shotgun.tscn" id="5_f8x45"]
+[ext_resource type="PackedScene" uid="uid://cbyqth8s4xbhf" path="res://scenes/wall_light.tscn" id="6_crryb"]
 
 [sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_2yet2"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_dsjma"]
 
 [node name="mansion2" type="StaticBody3D"]
 
@@ -19,7 +22,7 @@ transform = Transform3D(50, 0, 0, 0, 50, 0, 0, 0, 50, -0.093815, -0.45, -50.0106
 mesh = ExtResource("1_g6y00")
 
 [node name="border_wall1" parent="." instance=ExtResource("2_m8r4y")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.3, 0, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.86184, 0, 0)
 
 [node name="wall" parent="border_wall1" instance=ExtResource("2_m8r4y")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, 0)
@@ -169,16 +172,16 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30, 0, 0)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 40, 0, 0)
 
 [node name="corridor2" parent="." instance=ExtResource("2_m8r4y")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 1.43255, 0.0135759, -4.91145)
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -0.0230274, 0.0135759, -4.91145)
 
 [node name="wall3" parent="corridor2" instance=ExtResource("2_m8r4y")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.90036, 0.0010525, 0.00268924)
 
 [node name="door" parent="." instance=ExtResource("3_d730n")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.843, 4.55, -0.227437)
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1, -1.85029, -0.469554, -0.227437)
 
 [node name="door2" parent="." instance=ExtResource("3_d730n")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.843, 4.55, -19.5522)
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1, -1.843, -0.456154, -19.5522)
 
 [node name="ceiling" parent="." instance=ExtResource("2_m8r4y")]
 transform = Transform3D(10, 0, 0, 0, -4.37114e-07, -10, 0, 10, -4.37114e-07, 0.65, 10, -94.634)
@@ -199,4 +202,39 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.83146, 0.743449, -24.067)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.89048, 0.545768, -28.0107)
 
 [node name="shotgun" parent="." instance=ExtResource("5_f8x45")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -26.1842, 0, -8.12568)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -26.1882, 0, -8.12962)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -26.1813, 3.53627, -8.15095)
+mesh = SubResource("BoxMesh_dsjma")
+skeleton = NodePath("SpotLight3D")
+
+[node name="SpotLight3D" type="SpotLight3D" parent="MeshInstance3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.303228)
+light_color = Color(0, 0.72549, 0.823529, 1)
+light_energy = 2.143
+spot_range = 5.28161
+spot_angle = 35.4254
+
+[node name="SpotLight3D2" type="SpotLight3D" parent="."]
+transform = Transform3D(0.766044, 0.111619, 0.633022, 0, 0.984808, -0.173648, -0.642788, 0.133022, 0.754407, -46.9784, -0.0532565, -14.5241)
+light_color = Color(0.929412, 0.529412, 0.203922, 1)
+light_energy = 2.143
+spot_range = 7.71849
+spot_angle = 35.9245
+
+[node name="SpotLight3D3" type="SpotLight3D" parent="."]
+transform = Transform3D(0.766044, 0.111619, 0.633022, 0, 0.984808, -0.173648, -0.642788, 0.133022, 0.754407, -0.126914, -0.0532565, -14.6773)
+light_color = Color(0.929412, 0.529412, 0.203922, 1)
+light_energy = 2.143
+spot_range = 7.71849
+spot_angle = 35.9245
+
+[node name="wall_light" parent="." instance=ExtResource("6_crryb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -30.8397, 2.54076, -19.7866)
+
+[node name="wall_light2" parent="." instance=ExtResource("6_crryb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -26.4023, 2.54076, -19.7866)
+
+[node name="wall_light3" parent="." instance=ExtResource("6_crryb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -22.4237, 2.54076, -19.7866)
