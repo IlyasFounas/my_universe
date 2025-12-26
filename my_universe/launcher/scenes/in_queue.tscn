@@ -1,0 +1,84 @@
+[gd_scene load_steps=10 format=3 uid="uid://coyera6gwxe0o"]
+
+[ext_resource type="PackedScene" uid="uid://d3b3x2txas24s" path="res://launcher/scenes/dirty_wooden_table.tscn" id="1_uc160"]
+[ext_resource type="Script" path="res://launcher/scripts/in_queue.gd" id="1_yiq5o"]
+[ext_resource type="PackedScene" uid="uid://b5lxteqjgr25u" path="res://scenes/joe.tscn" id="2_qaaf0"]
+[ext_resource type="PackedScene" uid="uid://5vft6lq8ppot" path="res://launcher/mesh/whiskey_bottle_with_a_cup_of_whiskey.glb" id="3_g35ii"]
+[ext_resource type="PackedScene" uid="uid://cpjr2imt4v63m" path="res://mesh/izh-27.glb" id="5_xroig"]
+[ext_resource type="PackedScene" uid="uid://by514evd2a38o" path="res://launcher/mesh/abandoned_mansion_bedroom.glb" id="6_qc6kb"]
+[ext_resource type="PackedScene" uid="uid://dsdwibv0lyp81" path="res://mesh/woodsmans_axe.glb" id="6_wxlf6"]
+[ext_resource type="PackedScene" uid="uid://ce0il42eggo8e" path="res://scenes/larisa.tscn" id="8_tvfjm"]
+
+[sub_resource type="Environment" id="Environment_gcvkc"]
+background_mode = 2
+
+[node name="in_queue" type="Node3D"]
+script = ExtResource("1_yiq5o")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 5.0
+autostart = true
+
+[node name="SpotLight3D" type="SpotLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 5.26717, 3.69452, 0.945729)
+light_energy = 4.857
+spot_range = 14.1937
+spot_angle = 47.7458
+
+[node name="dirty_wooden_table" parent="." instance=ExtResource("1_uc160")]
+transform = Transform3D(1.5, 0, 0, 0, 1.49987, -0.0195559, 0, 0.0195559, 1.49987, 0.748904, 0, 0)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_gcvkc")
+
+[node name="joe__realistic_human_3d_model" parent="." instance=ExtResource("2_qaaf0")]
+transform = Transform3D(-1.49868, 0, 0.0629151, 0, 1.5, 0, -0.0629151, 0, -1.49868, 3.85001, 0.0107583, 2.08543)
+
+[node name="joe__realistic_human_3d_model2" parent="." instance=ExtResource("2_qaaf0")]
+transform = Transform3D(-1.49868, 0, 0.0629151, 0, 1.5, 0, -0.0629151, 0, -1.49868, 5.31152, 0.0107583, 1.4794)
+
+[node name="joe__realistic_human_3d_model3" parent="." instance=ExtResource("2_qaaf0")]
+transform = Transform3D(-1.49868, 0, 0.0629151, 0, 1.5, 0, -0.0629151, 0, -1.49868, 3.28677, 0.0107583, 1.57933)
+
+[node name="whiskey_bottle_with_a_cup_of_whiskey" parent="." instance=ExtResource("3_g35ii")]
+transform = Transform3D(0.19346, 0, 0.050728, 0, 0.2, 0, -0.050728, 0, 0.19346, 0.824648, 1.71232, 0.49165)
+
+[node name="whiskey_bottle_with_a_cup_of_whiskey2" parent="." instance=ExtResource("3_g35ii")]
+transform = Transform3D(-0.107148, 0, -0.168877, 0, 0.2, 0, 0.168877, 0, -0.107148, 0.68194, 1.71232, -0.457065)
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(-0.999369, 0.00919365, -0.0342991, 1.1317e-08, 0.965903, 0.258903, 0.0355099, 0.25874, -0.965294, 4.3275, 2.06005, -1.03508)
+
+[node name="izh-27" parent="." instance=ExtResource("5_xroig")]
+transform = Transform3D(0.211103, 0.977464, 0, -0.977464, 0.211103, 0, 0, 0, 1, -0.224602, 1.53246, -0.185822)
+
+[node name="izh-28" parent="." instance=ExtResource("5_xroig")]
+transform = Transform3D(0.478332, 0.704343, 0.524499, -0.819009, 0.57332, -0.0229839, -0.316894, -0.418576, 0.851101, -0.349822, 1.56642, 0.0474951)
+
+[node name="woodsmans_axe" parent="." instance=ExtResource("6_wxlf6")]
+transform = Transform3D(-0.170948, -0.00425253, -0.985271, 0.0248685, -0.999691, 0, -0.984966, -0.0245022, 0.171001, 0.870866, 1.06226, 2.10735)
+
+[node name="abandoned_mansion_bedroom" parent="." instance=ExtResource("6_qc6kb")]
+transform = Transform3D(1.3, 0, 0, 0, 1.2, 0, 0, 0, 1.2, 19.3515, 0, 23.2246)
+
+[node name="larisa" parent="." instance=ExtResource("8_tvfjm")]
+transform = Transform3D(-1.184, 0, -0.195354, 0, 1.2, 0, 0.195354, 0, -1.184, 4.77736, 0, 1.67631)
+
+[node name="larisa2" parent="." instance=ExtResource("8_tvfjm")]
+transform = Transform3D(-1.184, 0, -0.195354, 0, 1.2, 0, 0.195354, 0, -1.184, 5.91999, 0, 1.67631)
+
+[node name="larisa3" parent="." instance=ExtResource("8_tvfjm")]
+transform = Transform3D(-1.184, 0, -0.195354, 0, 1.2, 0, 0.195354, 0, -1.184, 4.23378, 0, 1.27188)
+
+[node name="Node2D" type="Node2D" parent="."]
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Node2D"]
+offset_left = -148.0
+offset_top = -44.0
+offset_right = 159.0
+offset_bottom = 55.0
+theme_override_font_sizes/normal_font_size = 30
+text = "MANSION
+(The game will start)"
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

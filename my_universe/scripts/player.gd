@@ -12,8 +12,8 @@ var SPEED = 5.0
 const JUMP_VELOCITY = 8.5
 var delta = 0
 var WINDOW_SIZE;
-var MX;
-var MY;
+var MX = 0;
+var MY = 0;
 var amo = 1;
 var life = 100;
 
@@ -116,6 +116,8 @@ func _input(event):
 			SHOTGUN_ON = true
 
 func _replace_mouse(mx, my):
+	if mx == 0 && my == 0:
+		pass;
 	if mx >= WINDOW_SIZE - 5:
 		get_viewport().warp_mouse(Vector2(6, my))
 	elif mx <= 6:

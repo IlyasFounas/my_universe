@@ -11,7 +11,7 @@ background_mode = 2
 [node name="Word" type="Node3D"]
 
 [node name="player" parent="." instance=ExtResource("1_3nhyp")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.4678, 2, -4.68157)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.40619, -0.327425, 1.30397)
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_jhht4")

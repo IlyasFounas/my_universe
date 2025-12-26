@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://d3b3x2txas24s"]
+
+[ext_resource type="PackedScene" uid="uid://8n1hq3044oum" path="res://launcher/mesh/dirty_wooden_table.glb" id="1_0h8ah"]
+
+[node name="dirty_wooden_table" instance=ExtResource("1_0h8ah")]
+
+[node name="7c42833da8e146daba04973f300fa708_fbx" parent="Sketchfab_model" index="0"]
+transform = Transform3D(0.01, 0, 0, 0, 0, -0.01, 0, 0.01, 0, -0.226536, 0.0739122, -1.64118e-17)

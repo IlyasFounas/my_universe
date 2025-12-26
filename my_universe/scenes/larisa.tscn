@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://ce0il42eggo8e"]
+
+[ext_resource type="PackedScene" uid="uid://w2hi0ayeplqt" path="res://mesh/larisa.glb" id="1_3rhx7"]
+
+[node name="larisa" instance=ExtResource("1_3rhx7")]

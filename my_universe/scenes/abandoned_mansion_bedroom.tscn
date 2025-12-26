@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=3 uid="uid://bbo0ghkyivt3d"]
+
+[ext_resource type="PackedScene" uid="uid://by514evd2a38o" path="res://launcher/mesh/abandoned_mansion_bedroom.glb" id="1_glpik"]
+
+[node name="abandoned_mansion_bedroom" instance=ExtResource("1_glpik")]
+
+[node name="skp6B4E__USDInstance_1" parent="Sketchfab_model/USDRoot/model/Geom" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+
+[node name="FrontSide_6" parent="Sketchfab_model/USDRoot/model/Geom/skp6B4E__USDInstance_1" index="6"]
+visible = false
+
+[node name="BackSide_2" parent="Sketchfab_model/USDRoot/model/Geom/skp6B4E__USDInstance_1" index="23"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.229931, -3.60322, 1.72014)
